@@ -19,6 +19,7 @@ const Login = () => {
         setSpinButton(true)
         axios.post("https://node-api-gateway-rentmovie.vercel.app/login", { ...values })
             .then((res) => {
+                console.log(res)
                 let dataUser = res.data.user
                 let token = res.data.token
                 setUser({ ...dataUser, token })
