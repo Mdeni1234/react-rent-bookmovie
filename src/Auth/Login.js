@@ -17,7 +17,7 @@ const Login = () => {
     const onFinish = (values) => {
         setError(false)
         setSpinButton(true)
-        axios.post("https://rent-book-api-gateway.vercel.app/login", { ...values })
+        axios.post("https://node-api-gateway-rentmovie.vercel.app//login", { ...values })
             .then((res) => {
                 let dataUser = res.data.user
                 let token = res.data.token
