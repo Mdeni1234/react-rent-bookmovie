@@ -1,0 +1,118 @@
+.ant-layout {
+  min-height: 150vh;
+}
+
+.home {
+  min-height: 200vh;
+}
+
+#root > div > section > section > header > div > div.ant-col.ant-col-4.css-dev-only-do-not-override-1km3mtt > img {
+  margin-left : 30px;
+  cursor: pointer;
+}
+
+
+.ant-layout-content {
+  margin: 0px 0px !important;
+  padding: 0px 0px !important;
+  background-color: #0A0C0F !important;
+  color: white;
+}
+
+.ant-layout-content .content {
+  margin: 16px 16px !important;
+}
+
+.ant-layout-header .trigger {
+  padding: 0 24px;
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.ant-layout-header .trigger:hover {
+  color: whitesmoke;
+}
+
+:where(.css-dev-only-do-not-override-1km3mtt).ant-menu-light.ant-menu-horizontal >.ant-menu-item-selected, :where(.css-dev-only-do-not-override-1km3mtt).ant-menu-light.ant-menu-horizontal >.ant-menu-submenu-selected  {
+  color: white !important;
+  font-weight: bolder;
+  background-color: transparent;
+}
+
+:where(.css-dev-only-do-not-override-1km3mtt).ant-menu-light .ant-menu-item:hover:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected), :where(.css-dev-only-do-not-override-1km3mtt).ant-menu-light .ant-menu-submenu-title:hover:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected) {
+  border-bottom-width: 2px;
+  border-bottom-color: red;
+  color: red;
+}
+
+:where(.css-dev-only-do-not-override-1km3mtt).ant-menu-light.ant-menu-horizontal >.ant-menu-item-selected::after, :where(.css-dev-only-do-not-override-1km3mtt).ant-menu-light.ant-menu-horizontal >.ant-menu-submenu-selected::after {
+  border-bottom-color: red;
+}
+
+:where(.css-dev-only-do-not-override-1km3mtt).ant-menu-light.ant-menu-horizontal >.ant-menu-item:hover::after, :where(.css-dev-only-do-not-override-1km3mtt).ant-menu-light.ant-menu-horizontal >.ant-menu-submenu:hover::after, :where(.css-dev-only-do-not-override-1km3mtt).ant-menu-light.ant-menu-horizontal >.ant-menu-item-active::after, :where(.css-dev-only-do-not-override-1km3mtt).ant-menu-light.ant-menu-horizontal >.ant-menu-submenu-active::after, :where(.css-dev-only-do-not-override-1km3mtt).ant-menu-light.ant-menu-horizontal >.ant-menu-item-open::after, :where(.css-dev-only-do-not-override-1km3mtt).ant-menu-light.ant-menu-horizontal >.ant-menu-submenu-open::after {
+  border-bottom-width: 0px;
+  border-bottom-color: red;
+}
+
+
+header.ant-layout-header {
+  background: #111319 !important;
+}
+
+footer.ant-layout-footer {
+  background: #111319 !important;
+  color: white !important;
+}
+
+.ant-layout-sider-children .logo {
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.ant-layout-sider-children {
+  background: #111319 !important;
+}
+
+.ant-menu {
+  background: #111319 !important;
+}
+
+.label-left {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.imagehome .ant-image{
+  width: 100%;
+}
+
+.content {
+  margin: 50px 120px;
+}
+
+.ant-spin-dot-item {
+  background-color: white !important
+}
+
+.content-layout {
+  padding: 20px;
+}
+
+h1.caption {
+  position: absolute;
+  top: 65%;
+  transform: translateY(-50%) translateX(30%);
+  color: black;
+  font-weight: 800px !important;
+  letter-spacing: 1px;
+  font-size: 3.5rem;
+}
+
+div.gradient {
+  height: 100%;
+  background-color: #111319;
+  background: linear-gradient(to top left, #111319,#0A0C0F);
+}
