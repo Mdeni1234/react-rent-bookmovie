@@ -14,27 +14,25 @@ const Login = () => {
   const navigate = useNavigate();
 
   const onFinish = (values) => {
-    console.log(values);
     setError(false);
     setSpinButton(true);
-    // axios
-    //   .post("https://node-api-gateway-rentmovie.vercel.app/login", {
-    //     ...values,
-    //   })
-    //   .then((res) => {
-    //     console.log(res);
-    //     let dataUser = res.data.user;
-    //     let token = res.data.token;
-    //     setUser({ ...dataUser, token });
-    //     setDashboard(true);
-    //     localStorage.setItem("user", JSON.stringify({ ...dataUser, token }));
-    //     navigate(dataUser.role === "admin" ? "/admin" : "/");
-    //   })
-    //   .catch((err) => {
-    //     setError(true);
-    //     setSpinButton(false);
-    //     console.log(err);
-    //   });
+    axios
+      .post("https://node-api-gateway-rentmovie.vercel.app/login", {
+        ...values,
+      })
+      .then((res) => {
+        let dataUser = res.data.user;
+        let token = res.data.token;
+        setUser({ ...dataUser, token });
+        setDashboard(true);
+        localStorage.setItem("user", JSON.stringify({ ...dataUser, token }));
+        navigate(dataUser.role === "admin" ? "/admin" : "/");
+      })
+      .catch((err) => {
+        setError(true);
+        setSpinButton(false);
+        console.log(err);
+      });
   };
 
   const onFinishFailed = (errorInfo) => {
