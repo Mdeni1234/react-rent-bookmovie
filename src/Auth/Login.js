@@ -14,6 +14,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const onFinish = (values) => {
+    console.log(values);
     setError(false);
     setSpinButton(true);
     axios
@@ -21,6 +22,7 @@ const Login = () => {
         ...values,
       })
       .then((res) => {
+        console.log(res);
         let dataUser = res.data.user;
         let token = res.data.token;
         setUser({ ...dataUser, token });
