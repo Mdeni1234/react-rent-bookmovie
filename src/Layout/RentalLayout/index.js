@@ -27,7 +27,7 @@ const RentalLayout = () => {
     return res.data;
   };
   const fetchDataUser = async () => {
-    if (user && configJWT && (rentalData || dataItem)) {
+    if (user && configJWT) {
       const resActive = await axios.get(
         `${urlGateway}/rental/active/${user.id}`,
         configJWT
