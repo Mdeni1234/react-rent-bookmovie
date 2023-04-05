@@ -32,6 +32,7 @@ const RentalLayout = () => {
         `${urlGateway}/rental/active/${user.id}`,
         configJWT
       );
+      setRentalData(false);
       return resActive.data;
     } else {
       return false;
@@ -44,7 +45,6 @@ const RentalLayout = () => {
     user && checkingRentalStatus(userData, item);
     setRentalItemActive(userData);
     setItemRental(item);
-    setRentalData(false);
     setDataItem(false);
   };
   useEffect(() => {
