@@ -22,22 +22,33 @@ const RentalLayout = () => {
   const [rentalStatus, setRentalStatus] = useState(null);
   const [rentalItemActive, setRentalItemActive] = useState([]);
   const [dataItem, setDataItem] = useState(true);
-
-  const fetchData = async () => {
+  const fetchItem = async () => {
     const res = await axios.get(`${urlGateway}/item/${id}`);
-    const resActive = await axios.get(
-      `${urlGateway}/rental/active/${user.id}`,
-      configJWT
-    );
-    checkingRentalStatus(resActive.data, res.data);
-    setItemRental(res.data);
-    setRentalItemActive(resActive.data);
+    return res.data;
+  };
+  const fetchDataUser = async () => {
+    if (user && configJWT && (rentalData || dataItem)) {
+      const resActive = await axios.get(
+        `${urlGateway}/rental/active/${user.id}`,
+        configJWT
+      );
+      return resActive.data;
+    } else {
+      return false;
+    }
+  };
+  const initData = async () => {
+    const item = await fetchItem();
+    const userData = await fetchDataUser();
+    console.log(userData);
+    user && checkingRentalStatus(userData, item);
+    setRentalItemActive(userData);
+    setItemRental(item);
     setRentalData(false);
     setDataItem(false);
   };
   useEffect(() => {
-    console.log(rentalData);
-    user && configJWT && (rentalData || dataItem) && fetchData();
+    dataItem && initData();
     rentalStatus !== null && checkingButtonAction();
   }, [configJWT, rentalStatus, openContent, rentalData, dataItem]);
 

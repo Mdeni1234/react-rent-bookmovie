@@ -17,14 +17,14 @@ const UserRoute = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/item" element={<ItemList />} />
       <Route path="/item/:id" element={<RentalLayout />} />
+      <Route path="/item" element={<ItemList />} />
       <Route path="/genre">
         <Route index element={<GenrePublic />} />
         <Route path=":id" element={<GenreById />} />
       </Route>
       <Route path="/login" element={<Login />} />
-      <Route path="/items" element={<ItemPublic />}/>
+      <Route path="/items" element={<ItemPublic />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/edit-profile" element={<FormProfile />} />
       <Route path="/change-password" element={<ChangePassword />} />

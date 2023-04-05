@@ -1,5 +1,7 @@
 import { useContext, useEffect, useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import { RentalContext } from ".";
+import { UserContext } from "../../Context/UserContext";
 import CreateCart from "./CreateCart";
 import CreatePayment from "./CreatePayment";
 import LoadingPage from "./LoadingPage";
@@ -12,11 +14,12 @@ const RentalDetail = () => {
     setOpenContent,
     labelPaymentButton,
   } = useContext(RentalContext);
+  const [user] = useContext(UserContext);
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
+
   useEffect(() => {
-    console.log(itemRental.image_url);
     itemRental.image_url && setIsLoading(false);
-    console.log(isLoading);
   }, [itemRental]);
 
   const openContentRent = () => {
@@ -83,10 +86,19 @@ const RentalDetail = () => {
                     >
                       {labelPaymentButton}
                     </button>
-                  ) : (
+                  ) : user ? (
                     <CreatePayment item={[itemRental]} cartId={null} />
+                  ) : (
+                    <div className="ml-auto">
+                      <button
+                        onClick={() => navigate("/login")}
+                        class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                      >
+                        Login for Rent
+                      </button>
+                    </div>
                   )}
-                  <CreateCart itemId={itemRental.id} />
+                  {user && <CreateCart itemId={itemRental.id} />}
                 </div>
               </div>
             </div>
